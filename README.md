@@ -11,8 +11,6 @@ Just loop over `$PrimaryGalleryImages` or `$SecondaryGalleryImages` and render t
 Run the following to add this module as a requirement and install it via composer.
 
 ```
-#!bash
-
 composer require "webfox/silverstripe-gallery"
 ```
 
@@ -31,7 +29,7 @@ Page:
     - GalleryExtension
 ```
 
-By defaults the galleries are disabled, but if you have applied the extension to a superclass You can disable the gallery on a subclass:
+By default both galleries are enabled, but can be disabled by setting `enabled` to `false`, which can also be used to disable the gallery on a subclass:
 
 ```
 SubclassOfPage:
@@ -41,7 +39,7 @@ SubclassOfPage:
     enabled: false
 ```
 
-then browse to /dev/build?flush=all
+then browse to `/dev/build?flush=all`
 
 #Requirements#
 * Silverstripe 3.1+
