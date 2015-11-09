@@ -1,5 +1,5 @@
-#Silverstripe Carousel#
-This plugin simply adds the required dataobject and makes an extension available to automatically add a carousel tab to any page on your site.
+#Silverstripe Gallery#
+This plugin simply adds the required dataobjects and makes an extension available to automatically add up to two gallery/carousel etc tabs to any page on your site.
 This plugin does not do the frontend for you at all as there are so many different options that it's impracticable.
 
 Just loop over `$PrimaryGalleryImages` or `$SecondaryGalleryImages` and render the slides out as you wish.
