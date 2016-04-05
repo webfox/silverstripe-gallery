@@ -3,21 +3,24 @@
 /**
  * @property SiteTree $owner
  */
-class GalleryExtension extends SiteTreeExtension {
+class GalleryExtension extends SiteTreeExtension
+{
 
     private static $has_many = [
         'PrimaryGalleryImages'   => 'PrimaryGalleryImage',
         'SecondaryGalleryImages' => 'SecondaryGalleryImage',
     ];
 
-    public function updateCMSFields(FieldList $fields) {
-
+    public function updateCMSFields(FieldList $fields)
+    {
         foreach (['primary', 'secondary'] as $lower) {
             $upper  = ucfirst($lower);
             
             $fields->removeByName("{$upper}GalleryImages");
             $config = $this->owner->config()->get("{$lower}_gallery");
-            if (is_null($config) || (isset($config['enabled']) && $config['enabled'] === false)) continue;
+            if (is_null($config) || (isset($config['enabled']) && $config['enabled'] === false)) {
+                continue;
+            }
 
             $config['title']  = isset($config['title']) ? $config['title'] : "{$upper} Gallery";
             $config['folder'] = isset($config['folder']) ? $config['folder'] : "{$upper}-Gallery-Images";
@@ -42,9 +45,6 @@ class GalleryExtension extends SiteTreeExtension {
 
             $tab->setTitle($config['title']);
             $fields->addFieldToTab("Root.{$upper}Gallery", $GridField);
-
         }
     }
-
-
 }
