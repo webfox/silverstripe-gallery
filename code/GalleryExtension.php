@@ -14,6 +14,8 @@ class GalleryExtension extends SiteTreeExtension {
 
         foreach (['primary', 'secondary'] as $lower) {
             $upper  = ucfirst($lower);
+            
+            $fields->removeByName("{$upper}GalleryImages");
             $config = $this->owner->config()->get("{$lower}_gallery");
             if (is_null($config) || (isset($config['enabled']) && $config['enabled'] === false)) continue;
 
