@@ -9,7 +9,8 @@
   ],
   "type"       : "silverstripe-module",
   "require"    : {
-    "silverstripe/cms": "~3.1"
+    "silverstripe/cms": "~3.1",
+    "undefinedoffset/sortablegridfield": "~0.6"
   },
   "license"    : "MIT",
   "authors"    : [
