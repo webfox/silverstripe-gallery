@@ -25,7 +25,7 @@ class SecondaryGalleryImage extends DataObject
 
     public function getCMSFields()
     {
-        $config = $this->Page()->config()->get("secondary_gallery") ?: [];
+        $config = $this->OwnerObject()->config()->get("secondary_gallery") ?: [];
         if (!is_array($config) || !isset($config['folder'])) {
             $config = ['folder' => 'Secondary-Gallery-Images'];
         }

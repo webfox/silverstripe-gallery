@@ -25,7 +25,7 @@ class PrimaryGalleryImage extends DataObject
 
     public function getCMSFields()
     {
-        $config = $this->Page()->config()->get("primary_gallery") ?: [];
+        $config = $this->OwnerObject()->config()->get("primary_gallery") ?: [];
         if (!is_array($config) || !isset($config['folder'])) {
             $config = ['folder' => 'Primary-Gallery-Images'];
         }
