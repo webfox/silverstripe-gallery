@@ -13,7 +13,7 @@ class SecondaryGalleryImage extends DataObject
     ];
 
     protected static $has_one = [
-        'Page'  => 'Page',
+        'OwnerObject'  => 'DataObject',
         'Image' => 'Image'
     ];
 
