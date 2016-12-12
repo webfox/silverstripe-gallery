@@ -28,7 +28,7 @@ class GalleryExtension extends SiteTreeExtension
             $GridFieldConfig = new GridFieldConfig_RecordEditor();
             $GridFieldConfig->removeComponentsByType('GridFieldAddNewButton');
             $GridFieldConfig->addComponent($bulkUploadConfig = new GridFieldBulkUpload());
-            $GridFieldConfig->addComponent(new GridFieldOrderableRows('SortOrder'));
+            $GridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
             $GridFieldConfig->addComponent(new GridFieldGalleryTheme('Image'));
             $bulkUploadConfig->setUfSetup('setFolderName', "Images/{$config['folder']}");
             $GridField = new GridField("{$upper}GalleryGridField", $config['title'], $this->owner->{"{$upper}GalleryImages"}(), $GridFieldConfig);
